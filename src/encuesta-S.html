@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Encuesta de Satisfaccion</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Tauri&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Tauri&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto+Slab:wght@100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Tauri&display=swap" rel="stylesheet">
+    <script>
+        function updateSliderValue(value) {
+            document.getElementById('valor_pregunta4').textContent = value;
+        }
+    </script>
+</head>
+<body>
+    <header>
+        <h1>Encuesta de Satisfacción - Empresa Tarea_Encuesta_Web</h1>
+        <img src="D:\Universidad\UPANA 2024\Programacion V\imagenes\logoempresa.png" alt="Logotipo de la empresa" id="logo">
+    </header>
+
+    <main>
+        <section>
+            <h2>Motivo de la Encuesta</h2>
+            <p>Queremos conocer tu opinion para mejorar nuestros productos y servicios.Tu feedback es valioso para nosotros</p>
+        </section>
+
+        <section>
+            <h2>Formulario de Encuesta</h2>
+                <table>
+                    <!-- Pregunta 1 -->
+                    <tr>
+                        <td><label for="pregunta1">¿Como calificarias nuestro servicio al cliente?</label></td>
+                        <td>
+                            <select id="pregunta1" name="pregunta1">
+                                <option value="5">Excelente</option>
+                                <option value="4">Muy Bueno</option>
+                                <option value="3">Bueno</option>
+                                <option value="2">Regular</option>
+                                <option value="1">Malo</option>
+                            </select>
+                        </td>
+                    </tr>
+
+                    <!-- Pregunta 2 -->
+                    <tr>
+                        <td><label for="pregunta2">¿Cual es tu producto favorito?</label></td>
+                        <td><input type="text" id="pregunta2" name="pregunta2"></td>
+                    </tr>
+
+                    <!-- Pregunta 3 -->
+                    <tr>
+                        <td><label for="pregunta3">Deja tus comentarios adicionales:</label></td>
+                        <td><textarea id="pregunta3" name="pregunta3" rows="4"></textarea></td>
+                    </tr>
+
+                    <!-- Pregunta 4 -->
+                    <tr>
+                        <td><label for="pregunta4">¿En que medida recomendarias nuestros productos a tus amigos?</label></td>
+                        <td>
+                            <input type="range" id="pregunta4" name="pregunta4" min="1" max="5" value="3" step="1"
+                                    oninput="updateSliderValue(this.value)">
+                            <output for="pregunta4" id="valor_pregunta4">3</output>
+                        </td>
+                    </tr>
+
+                    <!-- Pregunta 5 -->
+                    <tr>
+                        <td><label for="pregunta5">¿Que podemos mejorar?</label></td>
+                        <td><input type="text" id="pregunta5" name="pregunta5"></td>
+                    </tr>
+                </table>
+
+                <!-- Boton Enviar -->
+                <input type="submit" value="Enviar Encuesta">
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Empresa Tarea_Encuesta_Web. Todos los derechos reservados Andre Munrayos.</p>
+    </footer>
+</body>
+</html>
